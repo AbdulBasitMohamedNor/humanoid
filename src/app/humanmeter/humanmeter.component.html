@@ -1,0 +1,63 @@
+<div class="hm-container">
+  <div class="figure-card">
+    <mat-card>
+      <div class="svg-wrap" aria-label="Human figure progress" role="img">
+        <svg [attr.viewBox]="'0 0 300 600'" class="human-svg">
+          <defs>
+            <clipPath id="bodyClip">
+              <!-- Simplified human silhouette path -->
+              <path d="M150 10
+                       c-20 0-36 16-36 36s16 36 36 36 36-16 36-36-16-36-36-36z
+                       M120 90
+                       c-20 0-36 16-36 36v40c0 12-8 20-16 32l-12 20c-6 10-2 22 8 28s22 2 28-8l8-14 0 90-26 80c-4 12 2 24 14 28s24-2 28-14l24-72 24 72c4 12 16 18 28 14s18-16 14-28l-26-80 0-90 8 14c6 10 18 14 28 8s14-18 8-28l-12-20c-8-12-16-20-16-32v-40c0-20-16-36-36-36z"/>
+            </clipPath>
+            <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#00E5FF" stroke-width="2" />
+            </pattern>
+          </defs>
+
+          <!-- Base red fill -->
+          <rect x="0" y="0" width="300" height="600" fill="#8B0000" clip-path="url(#bodyClip)"/>
+
+          <!-- Rising green fill -->
+          <ng-container *ngIf="percent() as p">
+            <rect x="0" [attr.y]="600 - (p/100)*600" width="300" [attr.height]="(p/100)*600"
+                  [attr.fill]="(store.prefs().colorBlind ? 'url(#diagonalHatch)' : '#00C853')" clip-path="url(#bodyClip)"/>
+          </ng-container>
+
+          <!-- Outline -->
+          <path d="M150 10
+                     c-20 0-36 16-36 36s16 36 36 36 36-16 36-36-16-36-36-36z
+                     M120 90
+                     c-20 0-36 16-36 36v40c0 12-8 20-16 32l-12 20c-6 10-2 22 8 28s22 2 28-8l8-14 0 90-26 80c-4 12 2 24 14 28s24-2 28-14l24-72 24 72c4 12 16 18 28 14s18-16 14-28l-26-80 0-90 8 14c6 10 18 14 28 8s14-18 8-28l-12-20c-8-12-16-20-16-32v-40c0-20-16-36-36-36z"
+                fill="none" stroke="#000" stroke-width="2"/>
+        </svg>
+      </div>
+
+      <div class="encouragement">{{ encouragement() }}</div>
+      <mat-progress-bar mode="determinate" [value]="percent()" color="accent"></mat-progress-bar>
+      <div class="percent">{{ percent() }}%</div>
+    </mat-card>
+  </div>
+
+  <div class="panel-card">
+    <mat-card>
+      <mat-card-title>Today</mat-card-title>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let d of store.deeds()">
+          <mat-checkbox [checked]="d.done" (change)="toggle(d.id)" [aria-label]="d.label">{{ d.label }} (+{{ d.points }})</mat-checkbox>
+        </mat-list-item>
+      </mat-list>
+
+      <div class="controls">
+        <button mat-raised-button color="primary" (click)="reset()">Reset day</button>
+        <mat-slide-toggle [checked]="store.prefs().mute" (change)="setMute($event.checked)">Mute</mat-slide-toggle>
+        <mat-slide-toggle [checked]="store.prefs().colorBlind" (change)="setColorBlind($event.checked)">Color blind mode</mat-slide-toggle>
+      </div>
+
+      <div class="about">
+        Human Meter is a sleek and inspiring single page app that turns your daily good deeds into a futuristic visual journey. A glowing silhouette fills from the bottom up in rich emerald tones as you tick off acts of prayer, charity, kindness and learning. Multilingual, accessible, and delightful.
+      </div>
+    </mat-card>
+  </div>
+</div>

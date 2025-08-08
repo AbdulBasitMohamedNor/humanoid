@@ -1,0 +1,19 @@
+{
+  "title": "Human Meter",
+  "greeting": "Hello {{name}}",
+  "start": "Start now",
+  "goodStart": "Good start keep going",
+  "niceWork": "Nice work may Allah bless you",
+  "onPath": "Mashallah you are on the path of khayr",
+  "almost": "Almost there stay patient",
+  "jannah": "You are from the people of Jannah inshaAllah",
+  "progress": "Progress",
+  "reset": "Reset day",
+  "mute": "Mute",
+  "unmute": "Sound on",
+  "colorBlind": "Color blind mode",
+  "nickname": "Nickname",
+  "save": "Save",
+  "today": "Today",
+  "history": "History last seven days"
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Human Meter",
+  "greeting": "Hej {{name}}",
+  "start": "Börja nu",
+  "goodStart": "Bra start, fortsätt",
+  "niceWork": "Snyggt jobbat, må Allah välsigna dig",
+  "onPath": "Mashallah du är på vägen av khayr",
+  "almost": "Nästan där, ha tålamod",
+  "jannah": "Du är från Jannahs folk inshaAllah",
+  "progress": "Framsteg",
+  "reset": "Återställ dag",
+  "mute": "Tyst",
+  "unmute": "Ljud på",
+  "colorBlind": "Färgvänligt läge",
+  "nickname": "Smeknamn",
+  "save": "Spara",
+  "today": "Idag",
+  "history": "Historik senaste sju dagarna"
+}
