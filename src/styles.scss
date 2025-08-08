@@ -1,36 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* Global dark futuristic theme */
-@use '@angular/material' as mat;
-
-$primary: mat.m2-define-palette(mat.$m2-teal-palette, 600, 300, 800);
-$accent: mat.m2-define-palette(mat.$m2-cyan-palette, A200, A100, A400);
-$warn: mat.m2-define-palette(mat.$m2-red-palette);
-$theme: mat.m2-define-dark-theme((
-  color: (
-    primary: $primary,
-    accent: $accent,
-    warn: $warn,
-  ),
-));
-
-@include mat.core();
-@include mat.all-component-themes($theme);
-
-:root {
-  --bg-gradient: radial-gradient(1000px 600px at 10% 10%, #0a2233, transparent 70%),
-                 radial-gradient(800px 500px at 90% 20%, #0b1a24, transparent 70%),
-                 linear-gradient(180deg, #0a0f14 0%, #0d1117 100%);
-  --text: #e7f6f9;
-}
-
+/* Minimal reset to default starter */
 html, body { height: 100%; }
 body {
   margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg-gradient);
-  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-/* Utility focus style */
-:focus { outline: 2px solid #00e5ff66; outline-offset: 2px; }
+.content {
+  padding: 24px;
+}
