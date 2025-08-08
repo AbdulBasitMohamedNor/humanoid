@@ -1,0 +1,33 @@
+<div id="app">
+  <header>
+    <h1>Virtual Anatomy Viewer</h1>
+    <input id="file" type="file" accept=".glb,.gltf" />
+    <input id="url" type="text" placeholder="Paste GLB or GLTF URL then Load" style="flex:1;" />
+    <button id="loadUrl">Load</button>
+    <button id="reset">Reset view</button>
+  </header>
+
+  <aside id="sidebar">
+    <div class="section">
+      <h3>Tips</h3>
+      <div class="small">Drop a GLB or GLTF file here or use the inputs above. Rotate with mouse drag. Zoom with wheel. Pan with right drag.</div>
+    </div>
+    <div class="section">
+      <h3>Layers</h3>
+      <div id="layers"></div>
+    </div>
+    <div class="section">
+      <h3>Selection</h3>
+      <div id="selection">Nothing selected</div>
+    </div>
+    <div class="section">
+      <h3>Self tests</h3>
+      <div id="tests"></div>
+    </div>
+  </aside>
+
+  <main id="viewport">
+    <canvas #canvas id="canvas"></canvas>
+    <div id="info">Click a mesh to see its name. Toggle layers at left. Works best with models where top groups are named Skin Muscles Skeleton Organs.</div>
+  </main>
+</div>

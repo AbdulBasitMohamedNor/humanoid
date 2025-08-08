@@ -1,0 +1,17 @@
+html, body { height: 100%; }
+:host { display: block; height: 100%; }
+#app { display: grid; grid-template-columns: 300px 1fr; grid-template-rows: 56px 1fr; height: 100%; }
+header { grid-column: 1 / 3; display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid #ddd; }
+header h1 { font-size: 18px; margin: 0; }
+#sidebar { overflow: auto; border-right: 1px solid #eee; padding: 12px; }
+#viewport { position: relative; }
+#canvas { width: 100%; height: 100%; display: block; background: #111; }
+.section { margin-bottom: 18px; }
+.section h3 { margin: 10px 0; font-size: 14px; }
+.row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+#info { position: absolute; left: 12px; bottom: 12px; background: rgba(0,0,0,0.6); color: #fff; padding: 8px 10px; border-radius: 6px; font-size: 13px; max-width: 50%; }
+button, input, select, label { font-size: 14px; }
+#drop { border: 2px dashed #888; border-radius: 8px; padding: 10px; text-align: center; color: #555; }
+.small { font-size: 12px; color: #666; }
+.test-pass { color: #0a0; }
+.test-fail { color: #a00; }
