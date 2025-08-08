@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, proj1 ]
   workflow_dispatch:
 
 permissions:
@@ -40,12 +40,12 @@ jobs:
           echo Using base-href: $BASE
           npx ng build --base-href "$BASE"
           # Create SPA fallback for GitHub Pages routing
-          cp dist/humanmeter/browser/index.html dist/humanmeter/browser/404.html
+          cp dist/humanmeter/index.html dist/humanmeter/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/humanmeter/browser
+          path: dist/humanmeter
 
   deploy:
     needs: build
