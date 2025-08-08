@@ -1,0 +1,6 @@
+.panel-grid { display: grid; grid-template-columns: repeat(2, minmax(160px, 1fr)); gap: 8px 16px; align-items: center; }
+.row.heading { grid-column: 1 / -1; margin-bottom: 6px; }
+.row { display: flex; align-items: center; gap: 8px; }
+.row input[type="text"], .row select { background: #0f1420; color: #eaeef3; border: 1px solid #263047; border-radius: 6px; padding: 4px 6px; }
+.reading { grid-column: 1 / -1; padding-top: 6px; border-top: 1px dashed #263047; }
+.small { color: #9fb1d0; font-size: 12px; }

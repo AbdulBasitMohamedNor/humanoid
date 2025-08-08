@@ -1,0 +1,29 @@
+<div class="panel-grid" *ngIf="s.configs() as cfgs">
+  <div class="row heading">
+    <h2>{{ title }}</h2>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" [checked]="cfgs[k].enabled" (change)="s.setConfig(k,{enabled:$any($event.target).checked})"> Enable</label>
+  </div>
+  <div class="row">
+    <label>Address: <input type="text" [value]="cfgs[k].address" (change)="s.setConfig(k,{address:$any($event.target).value})"></label>
+  </div>
+  <div class="row">
+    <label>Full Scale:
+      <select [value]="cfgs[k].fs" (change)="s.setConfig(k,{fs: +$any($event.target).value})">
+        <option *ngFor="let v of fsOptions" [value]="v">{{v}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="row">
+    <label>ODR:
+      <select [value]="cfgs[k].odr" (change)="s.setConfig(k,{odr: +$any($event.target).value})">
+        <option *ngFor="let v of odrOptions" [value]="v">{{v}}</option>
+      </select>
+    </label>
+  </div>
+  <div class="row reading" *ngIf="s.readings()[k] as r">
+    <div>Value: <strong>{{ r.value | number:'1.0-1' }}</strong> {{ r.unit }}</div>
+    <div class="small">Updated: {{ r.timestamp | date:'mediumTime' }}</div>
+  </div>
+</div>

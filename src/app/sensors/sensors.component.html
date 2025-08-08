@@ -1,0 +1,42 @@
+<div class="shell">
+  <header class="topbar">
+    <h1>Sensor Dashboard</h1>
+    <div class="spacer"></div>
+    <button class="btn" (click)="sensors.enableAll()">Enable All Sensors</button>
+    <button class="btn" (click)="sensors.disableAll()">Disable All Sensors</button>
+  </header>
+
+  <div class="tabs">
+    <button class="tab" *ngFor="let k of keys" [class.active]="tab()===k" (click)="setTab(k)">
+      {{ label(k) }}
+    </button>
+  </div>
+
+  <div class="grid" *ngIf="sensors.configs() as cfgs">
+    <ng-container [ngSwitch]="tab()">
+      <div class="panel" *ngSwitchCase="'accel'">
+        <app-sensor-panel title="Accelerometer - LSM6DSOX" k="accel"></app-sensor-panel>
+      </div>
+      <div class="panel" *ngSwitchCase="'gyro'">
+        <app-sensor-panel title="Gyroscope - LSM6DSOX" k="gyro"></app-sensor-panel>
+      </div>
+      <div class="panel" *ngSwitchCase="'mag'">
+        <app-sensor-panel title="Magnetometer - LIS2MDL" k="mag"></app-sensor-panel>
+      </div>
+      <div class="panel" *ngSwitchCase="'press'">
+        <app-sensor-panel title="Pressure - LPS22HH" k="press"></app-sensor-panel>
+      </div>
+      <div class="panel" *ngSwitchCase="'humid'">
+        <app-sensor-panel title="Humidity - HTS221" k="humid"></app-sensor-panel>
+      </div>
+      <div class="panel" *ngSwitchCase="'temp'">
+        <app-sensor-panel title="Temperature - HTS221" k="temp"></app-sensor-panel>
+      </div>
+    </ng-container>
+  </div>
+
+  <aside class="logs">
+    <h3>Logs</h3>
+    <div class="log" *ngFor="let line of sensors.logs()">{{ line }}</div>
+  </aside>
+</div>

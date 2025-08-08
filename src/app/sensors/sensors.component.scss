@@ -1,0 +1,14 @@
+:host { display: block; height: 100%; color: #eaeef3; }
+.shell { display: grid; grid-template-rows: 56px 40px 1fr; height: 100%; background: #0f1116; }
+.topbar { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid #222; background: #12151c; }
+.topbar h1 { font-size: 16px; margin: 0; }
+.spacer { flex: 1 1 auto; }
+.tabs { display: flex; gap: 8px; padding: 6px 10px; border-bottom: 1px solid #222; background: #0f1116; overflow:auto; }
+.tab { background: #1a1f2b; color: #cfd7e3; border: 1px solid #2a2f3b; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.tab.active { background: #2e3a57; color: #fff; border-color: #3b4a6a; }
+.grid { padding: 12px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+.panel { background: #121823; border: 1px solid #1f2430; border-radius: 8px; padding: 12px; }
+.btn { background: #2a3450; color: #eaeef3; border: 1px solid #3a4666; border-radius: 6px; padding: 6px 10px; cursor: pointer; }
+.btn:hover { background: #344064; }
+.logs { border-top: 1px solid #222; padding: 8px 12px; background: #0f1116; }
+.log { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; color: #9fb1d0; }
