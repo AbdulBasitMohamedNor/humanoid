@@ -41,6 +41,8 @@ jobs:
           npx ng build --base-href "$BASE"
           # Create SPA fallback for GitHub Pages routing
           cp dist/humanmeter/index.html dist/humanmeter/404.html
+          # Ensure Pages doesn't run Jekyll
+          touch dist/humanmeter/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
